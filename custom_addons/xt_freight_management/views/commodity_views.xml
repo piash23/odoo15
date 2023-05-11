@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="delivery_type_view_form" model="ir.ui.view">
-        <field name="name">delivery.type.form</field>
-        <field name="model">delivery.type</field>
+    <record id="commodity_view_form" model="ir.ui.view">
+        <field name="name">commodity.form</field>
+        <field name="model">commodity</field>
         <field name="arch" type="xml">
-            <form string="Delivery Type">
+            <form string="Commodity">
                 <sheet>
                     <group>
                         <group>
@@ -18,11 +18,11 @@
         </field>
     </record>
 
-    <record id="delivery_type_view_tree" model="ir.ui.view">
-        <field name="name">delivery.type.tree</field>
-        <field name="model">delivery.type</field>
+    <record id="commodity_view_tree" model="ir.ui.view">
+        <field name="name">commodity.tree</field>
+        <field name="model">commodity</field>
         <field name="arch" type="xml">
-            <tree string="Delivery Type">
+            <tree string="Commodity">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="active"/>
@@ -30,9 +30,9 @@
         </field>
     </record>
 
-    <record id="delivery_type_view_search" model="ir.ui.view">
-        <field name="name">delivery.type.search</field>
-        <field name="model">delivery.type</field>
+    <record id="commodity_view_search" model="ir.ui.view">
+        <field name="name">commodity.search</field>
+        <field name="model">commodity</field>
         <field name="arch" type="xml">
             <search>
                 <field name="code"/>
@@ -43,20 +43,20 @@
         </field>
     </record>
 
-    <record id="action_delivery_type" model="ir.actions.act_window">
-        <field name="name">Delivery Type</field>
-        <field name="res_model">delivery.type</field>
+    <record id="action_commodity" model="ir.actions.act_window">
+        <field name="name">Commodity</field>
+        <field name="res_model">commodity</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="freight_management.delivery_type_view_tree"/>
+        <field name="view_id" ref="xt_freight_management.commodity_view_tree"/>
         <field name="context">{'search_default_active': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a Delivery Type!
+                Create a Commodity!
             </p>
         </field>
     </record>
 
-    <menuitem id="menu_delivery_type"
-              parent="freight_management.menu_others_config"
-              action="action_delivery_type" sequence="18"/>
+    <menuitem id="menu_commodity"
+              parent="xt_freight_management.menu_others_config"
+              action="action_commodity" sequence="4"/>
 </odoo>

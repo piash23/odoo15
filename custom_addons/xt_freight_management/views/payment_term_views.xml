@@ -62,7 +62,7 @@
         <field name="name">Payment Term</field>
         <field name="res_model">payment.term</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="freight_management.payment_term_view_tree"/>
+        <field name="view_id" ref="xt_freight_management.payment_term_view_tree"/>
         <field name="context">{'search_default_active': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -72,6 +72,6 @@
     </record>
 
     <menuitem id="menu_payment_term"
-              parent="freight_management.menu_others_config"
+              parent="xt_freight_management.menu_others_config"
               action="action_payment_term" sequence="4"/>
 </odoo>

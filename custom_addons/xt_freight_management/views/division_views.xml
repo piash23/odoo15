@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="district_view_form" model="ir.ui.view">
-        <field name="name">district.form</field>
-        <field name="model">district</field>
+    <record id="division_view_form" model="ir.ui.view">
+        <field name="name">division.form</field>
+        <field name="model">division</field>
         <field name="arch" type="xml">
-            <form string="District">
+            <form string="Division">
                 <sheet>
                     <group>
                         <group>
@@ -18,11 +18,11 @@
         </field>
     </record>
 
-    <record id="district_view_tree" model="ir.ui.view">
-        <field name="name">district.tree</field>
-        <field name="model">district</field>
+    <record id="division_view_tree" model="ir.ui.view">
+        <field name="name">division.tree</field>
+        <field name="model">division</field>
         <field name="arch" type="xml">
-            <tree string="District">
+            <tree string="Division">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="active"/>
@@ -30,9 +30,9 @@
         </field>
     </record>
 
-    <record id="district_view_search" model="ir.ui.view">
-        <field name="name">district.search</field>
-        <field name="model">district</field>
+    <record id="division_view_search" model="ir.ui.view">
+        <field name="name">division.search</field>
+        <field name="model">division</field>
         <field name="arch" type="xml">
             <search>
                 <field name="code"/>
@@ -43,20 +43,20 @@
         </field>
     </record>
 
-    <record id="action_district" model="ir.actions.act_window">
-        <field name="name">District</field>
-        <field name="res_model">district</field>
+    <record id="action_division" model="ir.actions.act_window">
+        <field name="name">Division</field>
+        <field name="res_model">division</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="freight_management.district_view_tree"/>
+        <field name="view_id" ref="xt_freight_management.division_view_tree"/>
         <field name="context">{'search_default_active': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a District!
+                Create a Division!
             </p>
         </field>
     </record>
 
-    <menuitem id="menu_district"
-              parent="freight_management.menu_others_config"
-              action="action_district" sequence="17"/>
+    <menuitem id="menu_division"
+              parent="xt_freight_management.menu_others_config"
+              action="action_division" sequence="4"/>
 </odoo>

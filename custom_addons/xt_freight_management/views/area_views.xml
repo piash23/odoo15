@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="commodity_view_form" model="ir.ui.view">
-        <field name="name">commodity.form</field>
-        <field name="model">commodity</field>
+    <record id="area_view_form" model="ir.ui.view">
+        <field name="name">area.form</field>
+        <field name="model">area</field>
         <field name="arch" type="xml">
-            <form string="Commodity">
+            <form string="Area">
                 <sheet>
                     <group>
                         <group>
@@ -18,11 +18,11 @@
         </field>
     </record>
 
-    <record id="commodity_view_tree" model="ir.ui.view">
-        <field name="name">commodity.tree</field>
-        <field name="model">commodity</field>
+    <record id="area_view_tree" model="ir.ui.view">
+        <field name="name">area.tree</field>
+        <field name="model">area</field>
         <field name="arch" type="xml">
-            <tree string="Commodity">
+            <tree string="Area">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="active"/>
@@ -30,9 +30,9 @@
         </field>
     </record>
 
-    <record id="commodity_view_search" model="ir.ui.view">
-        <field name="name">commodity.search</field>
-        <field name="model">commodity</field>
+    <record id="area_view_search" model="ir.ui.view">
+        <field name="name">area.search</field>
+        <field name="model">area</field>
         <field name="arch" type="xml">
             <search>
                 <field name="code"/>
@@ -43,20 +43,20 @@
         </field>
     </record>
 
-    <record id="action_commodity" model="ir.actions.act_window">
-        <field name="name">Commodity</field>
-        <field name="res_model">commodity</field>
+    <record id="action_area" model="ir.actions.act_window">
+        <field name="name">Area</field>
+        <field name="res_model">area</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="freight_management.commodity_view_tree"/>
+        <field name="view_id" ref="xt_freight_management.area_view_tree"/>
         <field name="context">{'search_default_active': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a Commodity!
+                Create an Area!
             </p>
         </field>
     </record>
 
-    <menuitem id="menu_commodity"
-              parent="freight_management.menu_others_config"
-              action="action_commodity" sequence="4"/>
+    <menuitem id="menu_area"
+              parent="xt_freight_management.menu_others_config"
+              action="action_area" sequence="1"/>
 </odoo>
