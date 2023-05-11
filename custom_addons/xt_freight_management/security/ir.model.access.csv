@@ -5,3 +5,4 @@ access_district,access.district,xt_freight_management.model_district,,1,1,1,1
 access_delivery_type,access.delivery.type,xt_freight_management.model_delivery_type,,1,1,1,1
 access_commodity,access.commodity,xt_freight_management.model_commodity,,1,1,1,1
 access_payment_term,access.payment.term,xt_freight_management.model_payment_term,,1,1,1,1
+access_shipping_line,access.shipping.line,xt_freight_management.model_shipping_line,,1,1,1,1

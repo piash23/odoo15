@@ -17,6 +17,7 @@
         'views/delivery_type_views.xml',
         'views/commodity_views.xml',
         'views/payment_term_views.xml',
+        'views/shipping_line.xml',
     ],
     "installable": True,
     "application": True,
