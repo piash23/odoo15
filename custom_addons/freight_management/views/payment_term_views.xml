@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_term_view_form" model="ir.ui.view">
+        <field name="name">payment.term.form</field>
+        <field name="model">payment.term</field>
+        <field name="arch" type="xml">
+            <form string="Payment Term">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="description"/>
+                            <field name="net_days"/>
+                            <field name="discount_days"/>
+                            <field name="discount_percent"/>
+                            <field name="service_charge_min_amt"/>
+                            <field name="service_charge_percent"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_term_view_tree" model="ir.ui.view">
+        <field name="name">payment.term.tree</field>
+        <field name="model">payment.term</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Term">
+                <field name="code"/>
+                <field name="description"/>
+                <field name="net_days"/>
+                <field name="discount_days"/>
+                <field name="discount_percent"/>
+                <field name="service_charge_min_amt"/>
+                <field name="service_charge_percent"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="payment_term_view_search" model="ir.ui.view">
+        <field name="name">payment.term.search</field>
+        <field name="model">payment.term</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="description"/>
+                <field name="net_days"/>
+                <field name="discount_days"/>
+                <field name="discount_percent"/>
+                <field name="service_charge_min_amt"/>
+                <field name="service_charge_percent"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_payment_term" model="ir.actions.act_window">
+        <field name="name">Payment Term</field>
+        <field name="res_model">payment.term</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="freight_management.payment_term_view_tree"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Payment Term!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_payment_term"
+              parent="freight_management.menu_others_config"
+              action="action_payment_term" sequence="4"/>
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_area,access.area,freight_management.model_area,,1,1,1,1
+access_division,access.division,freight_management.model_division,,1,1,1,1
+access_district,access.district,freight_management.model_district,,1,1,1,1
+access_delivery_type,access.delivery.type,freight_management.model_delivery_type,,1,1,1,1
+access_commodity,access.commodity,freight_management.model_commodity,,1,1,1,1
+access_payment_term,access.payment.term,freight_management.model_payment_term,,1,1,1,1

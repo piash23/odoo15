@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="division_view_form" model="ir.ui.view">
+        <field name="name">division.form</field>
+        <field name="model">division</field>
+        <field name="arch" type="xml">
+            <form string="Division">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="division_view_tree" model="ir.ui.view">
+        <field name="name">division.tree</field>
+        <field name="model">division</field>
+        <field name="arch" type="xml">
+            <tree string="Division">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="division_view_search" model="ir.ui.view">
+        <field name="name">division.search</field>
+        <field name="model">division</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_division" model="ir.actions.act_window">
+        <field name="name">Division</field>
+        <field name="res_model">division</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="freight_management.division_view_tree"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Division!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_division"
+              parent="freight_management.menu_others_config"
+              action="action_division" sequence="4"/>
+</odoo>
