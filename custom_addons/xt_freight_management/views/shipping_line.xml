@@ -8,18 +8,43 @@
             <field name="arch" type="xml">
                 <form string="Shipping Line">
                     <sheet>
-<!--                        <div class="oe_title">-->
-<!--                            <label for="example_title"/>-->
-<!--                            <h1>-->
-<!--                                <field name="example_title" placeholder="Title"/>-->
-<!--                            </h1>-->
-<!--                        </div>-->
+                        <div class="oe_title">
+                            <label for="shipping_line_code"/>
+                            <h1>
+                                <field name="shipping_line_code" placeholder="Shipping Line Code"/>
+                            </h1>
+                        </div>
                         <group>
                             <group>
-                                <field name="create_date"/>
+                                <span class="o_form_label o_td_label" name="address_name">
+                                    <!--                                <field name="type" class="font-weight-bold" on_change="1" invisible="1" modifiers="{&quot;invisible&quot;: true}"/>-->
+                                    <b>Address</b>
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State"
+                                           options="{'no_open': True, 'no_quick_create': True}"
+                                           context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"
+                                           on_change="1" can_create="true" can_write="true"
+                                           modifiers="{&quot;readonly&quot;: [[&quot;type&quot;, &quot;=&quot;, &quot;contact&quot;], [&quot;parent_id&quot;, &quot;!=&quot;, false]]}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip" on_change="1"
+                                           modifiers="{&quot;readonly&quot;: [[&quot;type&quot;, &quot;=&quot;, &quot;contact&quot;], [&quot;parent_id&quot;, &quot;!=&quot;, false]]}"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"
+                                           options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                                           on_change="1" can_create="true" can_write="true"
+                                           modifiers="{&quot;readonly&quot;: [[&quot;type&quot;, &quot;=&quot;, &quot;contact&quot;], [&quot;parent_id&quot;, &quot;!=&quot;, false]]}"/>
+                                </div>
+                                <field name="telephone"/>
+                                <field name="fax"/>
                             </group>
                             <group>
-<!--                                <field name="example_field"/>-->
+                                <field name="email"/>
+                                <field name="web_site"/>
+                                <field name="contact"/>
+                                <field name="cr_no"/>
+                                <field name="analysis_code"/>
                             </group>
                         </group>
                     </sheet>
@@ -31,25 +56,27 @@
             <field name="name">Shipping Line</field>
             <field name="model">shipping.line</field>
             <field name="arch" type="xml">
-                <tree string="ModelTitle">
-                    <field name="create_date"/>
-<!--                    <field name="example_field"/>-->
+                <tree string="Shipping Line List">
+                    <field name="shipping_line_code"/>
+                    <field name="country_code"/>
+                    <field name="analysis_code"/>
+                    <field name="write_date"/>
                 </tree>
             </field>
         </record>
 
-<!--        <record id="Shipping_line_search_view" model="ir.ui.view">-->
-<!--            <field name="name">ProjectName.Shipping_line.search</field>-->
-<!--            <field name="model">ProjectName.Shipping_line</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <search string="ModelTitle">-->
-<!--                    <group expand="1" string="Group By">-->
-<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
-<!--                                context="{'group_by':'example_field'}"/>-->
-<!--                    </group>-->
-<!--                </search>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!--        <record id="Shipping_line_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.Shipping_line.search</field>-->
+        <!--            <field name="model">ProjectName.Shipping_line</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="ModelTitle">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+        <!--                                context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
 
         <record id="shipping_line_act_window" model="ir.actions.act_window">
             <field name="name">Shipping Line</field>
@@ -63,7 +90,8 @@
             </field>
         </record>
 
-        <menuitem name="Shipping Line" id="Shipping_line_menu" parent="xt_freight_management.menu_others_config" action="shipping_line_act_window"/>
+        <menuitem name="Shipping Line" id="Shipping_line_menu" parent="xt_freight_management.menu_others_config"
+                  action="shipping_line_act_window"/>
 
     </data>
 </odoo>
