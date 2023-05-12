@@ -7,7 +7,7 @@
     'maintainer': 'Invincix',
     'company': 'Invincix',
     'website': "https://www.invincix.com/",
-    'depends': ['base', 'base_address_city'],
+    'depends': ['base', 'base_address_city', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu_views.xml',

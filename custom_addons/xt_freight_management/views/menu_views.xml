@@ -6,4 +6,6 @@
                 <menuitem id="menu_country" name="Country" parent="xt_freight_management.menu_others_config" action="base.action_country" sequence="15"/>
                 <menuitem id="menu_country_state" name="State" parent="xt_freight_management.menu_others_config" action="base.action_country_state" sequence="16"/>
             <menuitem id="menu_sea_config" name="Sea" parent="xt_freight_management.menu_configuration" sequence="1"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="freight_action_tax_form" parent="menu_others_config" action="account.action_tax_form"/>
 </odoo>
