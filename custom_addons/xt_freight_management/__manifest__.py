@@ -7,7 +7,7 @@
     'maintainer': 'Invincix',
     'company': 'Invincix',
     'website': "https://www.invincix.com/",
-    'depends': ['base'],
+    'depends': ['base', 'base_address_city'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu_views.xml',
@@ -18,6 +18,11 @@
         'views/commodity_views.xml',
         'views/payment_term_views.xml',
         'views/shipping_line.xml',
+        'views/vessel_code.xml',
+        'views/port_info.xml',
+        'views/cargo_class.xml',
+        'views/container_type.xml',
+
     ],
     "installable": True,
     "application": True,

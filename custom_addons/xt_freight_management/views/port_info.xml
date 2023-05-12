@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="port_info_form_view" model="ir.ui.view">
+            <field name="name">port.info.form</field>
+            <field name="model">port.info</field>
+            <field name="arch" type="xml">
+                <form string="Port">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="port_code"/>
+                            <h1>
+                                <field name="port_code" placeholder="Port Code"/>
+                            </h1>
+                        </div>
+                        <group>
+<!--                            <group>-->
+                                <field name="name"/>
+                                <field name="country_id"/>
+                                <field name="dg_cargo"/>
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="example_field"/>-->
+<!--                            </group>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="port_info_tree_view" model="ir.ui.view">
+            <field name="name">port.info.tree</field>
+            <field name="model">port.info</field>
+            <field name="arch" type="xml">
+                <tree string="Port">
+                    <field name="name" string="Port Name"/>
+                    <field name="port_code"/>
+                    <field name="country_code"/>
+                    <field name="country_id" string="Country Name"/>
+                    <field name="create_date"/>
+                    <field name="created_by"/>
+                    <field name="write_date"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="port_info_search_view" model="ir.ui.view">-->
+<!--            <field name="name">port.info.search</field>-->
+<!--            <field name="model">port.info</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Port">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="port_info_act_window" model="ir.actions.act_window">
+            <field name="name">Port</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">port.info</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new Port.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Port" id="port_info_menu" parent="menu_others_config" action="port_info_act_window"/>
+
+    </data>
+</odoo>

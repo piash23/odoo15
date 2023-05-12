@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="vessel_code_form_view" model="ir.ui.view">
+            <field name="name">vessel.code.form</field>
+            <field name="model">vessel.code</field>
+            <field name="arch" type="xml">
+                <form string="Vessel Code">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="vessel_code"/>
+                            <h1>
+                                <field name="vessel_code" placeholder="Vessel Code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="shipping_line"/>
+                                <field name="ship_owner"/>
+
+                            </group>
+                            <group>
+                                <field name="nrt"/>
+                                <field name="grt"/>
+                                <field name="country_flag"/>
+                                <field name="year_build"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vessel_code_tree_view" model="ir.ui.view">
+            <field name="name">vessel.code.tree</field>
+            <field name="model">vessel.code</field>
+            <field name="arch" type="xml">
+                <tree string="Vessel Code">
+                    <field name="vessel_code"/>
+                    <field name="name" string="Vessel Name"/>
+                    <field name="type" string="Vessel Type"/>
+                    <field name="shipping_line"/>
+                    <field name="write_date"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="vessel_code_search_view" model="ir.ui.view">-->
+<!--            <field name="name">vessel.code.search</field>-->
+<!--            <field name="model">vessel.code</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Vessel Code">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="vessel_code_act_window" model="ir.actions.act_window">
+            <field name="name">Vessel Code</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vessel.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new Vessel Code.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Vessel Code" id="vessel_code_menu" parent="menu_others_config" action="vessel_code_act_window"/>
+
+    </data>
+</odoo>

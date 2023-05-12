@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="cargo_class_form_view" model="ir.ui.view">
+            <field name="name">cargo.class.form</field>
+            <field name="model">cargo.class</field>
+            <field name="arch" type="xml">
+                <form string="Cargo Class">
+                    <sheet>
+<!--                        <div class="oe_title">-->
+<!--                            <label for="example_title"/>-->
+<!--                            <h1>-->
+<!--                                <field name="example_title" placeholder="Title"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+                        <group>
+<!--                            <group>-->
+                                <field name="trx_no"/>
+                                <field name="cargo_class_code"/>
+                                <field name="cargo_class_description"/>
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="example_field"/>-->
+<!--                            </group>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cargo_class_tree_view" model="ir.ui.view">
+            <field name="name">cargo.class.tree</field>
+            <field name="model">cargo.class</field>
+            <field name="arch" type="xml">
+                <tree string="Cargo Class">
+                    <field name="trx_no"/>
+                    <field name="cargo_class_code"/>
+                    <field name="cargo_class_description"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="cargo_class_search_view" model="ir.ui.view">-->
+<!--            <field name="name">cargo.class.search</field>-->
+<!--            <field name="model">cargo.class</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Cargo Class">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="cargo_class_act_window" model="ir.actions.act_window">
+            <field name="name">Cargo Class</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cargo.class</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    click here to add new Cargo Class.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Cargo Class" id="cargo_class_menu" parent="menu_others_config" action="cargo_class_act_window"/>
+
+    </data>
+</odoo>

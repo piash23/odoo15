@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="container_type_form_view" model="ir.ui.view">
+            <field name="name">container.type.form</field>
+            <field name="model">container.type</field>
+            <field name="arch" type="xml">
+                <form string="Container Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="container_code"/>
+                            <h1>
+                                <field name="container_code" placeholder="Container Code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                                <field name="size"/>
+                                <field name="no_of_teu"/>
+
+                            </group>
+                            <group>
+                                <field name="max_cubic_ft"/>
+                                <field name="max_volume"/>
+                                <field name="max_weight"/>
+                                <field name="temperature_flag"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="container_type_tree_view" model="ir.ui.view">
+            <field name="name">container.type.tree</field>
+            <field name="model">container.type</field>
+            <field name="arch" type="xml">
+                <tree string="Container Type List">
+                    <field name="container_code"/>
+                    <field name="description"/>
+                    <field name="size" string="Container Size"/>
+                    <field name="max_cubic_ft"/>
+                    <field name="max_volume"/>
+                    <field name="max_weight"/>
+                    <field name="no_of_teu"/>
+                    <field name="write_date"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="container_type_search_view" model="ir.ui.view">-->
+<!--            <field name="name">container.type.search</field>-->
+<!--            <field name="model">container.type</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Container Type Search">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="container_type_act_window" model="ir.actions.act_window">
+            <field name="name">Container Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">container.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Container Type" id="container_type_menu" parent="menu_others_config" action="container_type_act_window"/>
+
+    </data>
+</odoo>
