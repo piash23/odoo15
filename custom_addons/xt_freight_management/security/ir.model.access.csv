@@ -10,3 +10,7 @@ access_vessel_code,access.vessel.code,xt_freight_management.model_vessel_code,,1
 access_port_info,access.port.info,xt_freight_management.model_port_info,,1,1,1,1
 access_cargo_class,access.cargo.class,xt_freight_management.model_cargo_class,,1,1,1,1
 access_container_type,access.container.type,xt_freight_management.model_container_type,,1,1,1,1
+access_freight_charge,access.freight.charge,xt_freight_management.model_freight_charge,,1,1,1,1
+access_freight_charge_line,access.freight.charge.line,xt_freight_management.model_freight_charge_lines,,1,1,1,1
+access_charge_code,access.charge.code,xt_freight_management.model_charge_code,,1,1,1,1
+access_charge_code_line,access.charge.code.line,xt_freight_management.model_charge_code_line,,1,1,1,1

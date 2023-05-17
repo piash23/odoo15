@@ -9,3 +9,5 @@ from . import vessel_code
 from . import port_info
 from . import cargo_class
 from . import container_type
+from . import freight_charge
+from . import charge_code

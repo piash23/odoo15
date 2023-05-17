@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="freight_charge_form_view" model="ir.ui.view">
+            <field name="name">freight.charge.form</field>
+            <field name="model">freight.charge</field>
+            <field name="arch" type="xml">
+                <form string="Freight Charge">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="charge_table_no" class="oe_edit_only"/>
+                            <h1>
+                                <field name="charge_table_no"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="description"/>
+                            <label for="job_type"/>
+                            <div class="o_row">
+
+                                <field name="job_type" class="o_hr_narrow_field"/>
+                                <span>/</span>
+                                <field name="module" class="o_hr_narrow_field"/>
+                            </div>
+
+
+                            <field name="customer_code"/>
+                            <field name="port_of_loading"/>
+                            <field name="port_of_discharge"/>
+                            <field name="destination"/>
+                            <field name="valid_flag"/>
+                            <field name="standard_charge_flag"/>
+
+
+                            <field name="effective_date"/>
+                            <field name="expiry_date"/>
+                            <field name="frt_collect"/>
+                            <field name="note"/>
+                        </group>
+                        <notebook>
+                            <page string="Detail">
+                                <field name="charge_lines">
+                                    <tree editable="top">
+                                        <field name="item_code"/>
+                                        <field name="description"/>
+                                        <field name="qty"/>
+                                        <field name="cargo"/>
+                                        <field name="dg"/>
+                                        <field name="uom"/>
+                                        <field name="chg"/>
+                                        <field name="vat"/>
+                                        <field name="p_c"/>
+                                        <field name="chg_unit"/>
+                                        <field name="cont"/>
+                                        <field name="rate"/>
+                                        <field name="chg_unit"/>
+                                        <field name="curr"/>
+                                        <field name="min_amt"/>
+                                        <field name="amt"/>
+                                        <field name="cost"/>
+                                        <field name="charge_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="freight_charge_tree_view" model="ir.ui.view">
+            <field name="name">freight.charge.tree</field>
+            <field name="model">freight.charge</field>
+            <field name="arch" type="xml">
+                <tree string="Freight Charge" sample="1">
+                    <field name="charge_table_no"/>
+                    <field name="write_date"/>
+<!--                    <field name="module"/>-->
+                    <field name="create_date"/>
+                    <field name="description"/>
+<!--                    <field name="job_type"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!--        <record id="freight_charge_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">freight.charge.search</field>-->
+        <!--            <field name="model">freight.charge</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="Freight Charge Search">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+        <!--                                context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="freight_charge_act_window" model="ir.actions.act_window">
+            <field name="name">Freight Charge</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">freight.charge</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Click here to add new Freight Charge.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Freight Charge" id="freight_charge_menu" parent="menu_others_config"
+                  action="freight_charge_act_window"/>
+
+    </data>
+</odoo>

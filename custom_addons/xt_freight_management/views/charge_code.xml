@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="charge_code_form_view" model="ir.ui.view">
+            <field name="name">charge.code.form</field>
+            <field name="model">charge.code</field>
+            <field name="arch" type="xml">
+                <form string="Charge Code">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="item_code"/>
+                            <h1>
+                                <field name="item_code" placeholder="Item Code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="item_description"/>
+                                <field name="local_name"/>
+                                <field name="charge_type"/>
+                                <field name="module"/>
+                                <field name="department_code"/>
+                                <field name="sales_account"/>
+                                <field name="cost_account"/>
+                                <field name="sales_provision_account"/>
+                                <field name="provision_account"/>
+                                <field name="billing_curr_code"/>
+                                <field name="unit_of_measure"/>
+                                <field name="consolidation_item_code"/>
+                                <field name="sales_analysis_code"/>
+                            </group>
+                            <group>
+                                <field name="item_short_code"/>
+                                <field name="sales_cost"/>
+                                <field name="change_unit"/>
+                                <field name="cost_center_code"/>
+                                <field name="code"/>
+                                <field name="cost"/>
+                                <field name="site_code"/>
+                                <field name="cost_analysis_code"/>
+                            </group>
+                        </group>
+                        <notebook>
+                        <page string="Detail">
+                            <field name="charge_code_lines">
+                                <tree editable="top">
+                                    <field name="module"/>
+                                    <field name="job_type"/>
+                                    <field name="sales_acc_code"/>
+                                    <field name="sales_description"/>
+                                    <field name="cost_acc_code"/>
+                                    <field name="cost_description"/>
+                                    <field name="charge_code_id" invisible ="1"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="charge_code_tree_view" model="ir.ui.view">
+            <field name="name">charge.code.tree</field>
+            <field name="model">charge.code</field>
+            <field name="arch" type="xml">
+                <tree string="Charge Code">
+                    <field name="item_code"/>
+                    <field name="charge_type"/>
+                    <field name="consolidation_item_code" string="Consol Item Code"/>
+                    <field name="cost_account"/>
+                    <field name="cost_analysis_code"/>
+                    <field name="item_description"/>
+                    <field name="item_short_code"/>
+                    <field name="billing_curr_code"/>
+                    <field name="write_date"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="charge_code_search_view" model="ir.ui.view">-->
+<!--            <field name="name">charge.code.search</field>-->
+<!--            <field name="model">charge.code</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="ModelTitle">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="charge_code_act_window" model="ir.actions.act_window">
+            <field name="name">Charge Code</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">charge.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    click here to add new Charge Code.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Charge Code" id="charge_code_menu" parent="menu_others_config" action="charge_code_act_window"/>
+
+    </data>
+</odoo>
