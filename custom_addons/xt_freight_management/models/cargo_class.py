@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class CargoClass(models.Model):
     _name = "cargo.class"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Cargo Class"
 
     trx_no = fields.Integer(string="Trx No", required=True)

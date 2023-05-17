@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 
 class PaymentTerm(models.Model):
     _name = "payment.term"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Payment Term"
     _order = "id desc"
 

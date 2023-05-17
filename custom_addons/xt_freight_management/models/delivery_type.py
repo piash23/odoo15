@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 
 class DeliveryType(models.Model):
     _name = "delivery.type"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Delivery Type"
     _order = "id desc"
 

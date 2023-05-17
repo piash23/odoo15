@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class ShippingLine(models.Model):
     _name = "shipping.line"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Shipping Line"
 
     shipping_line_code = fields.Char(string="Shipping Line Code", required=True)

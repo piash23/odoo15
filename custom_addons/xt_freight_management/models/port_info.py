@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class PortInfo(models.Model):
     _name = "port.info"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Details about Ports"
 
     port_code = fields.Char(string="Port Code", required=True)

@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class VesselCode(models.Model):
     _name = 'vessel.code'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Vessel Code'
     
     vessel_code = fields.Char(

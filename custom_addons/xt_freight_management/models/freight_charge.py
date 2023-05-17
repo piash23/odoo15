@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class FreightCharge(models.Model):
     _name = "freight.charge"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Freight Charge Description"
 
     charge_table_no = fields.Char(string="Charge Table No", readonly=True)

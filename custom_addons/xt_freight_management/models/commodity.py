@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 
 class Commodity(models.Model):
     _name = "commodity"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Commodity"
     _order = "id desc"
 

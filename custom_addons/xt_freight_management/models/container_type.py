@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class ContainerType(models.Model):
     _name = "container.type"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Container Type"
 
     container_code = fields.Char(string="Container Code", required=True)

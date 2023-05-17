@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class ChargeCode(models.Model):
     _name = "charge.code"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Charge Code"
 
     item_code = fields.Char(string="Item Code", required=True)

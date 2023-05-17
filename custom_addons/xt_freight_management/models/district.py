@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 
 class District(models.Model):
     _name = "district"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "District"
     _order = "id desc"
 

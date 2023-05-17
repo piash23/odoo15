@@ -15,16 +15,18 @@
                             </h1>
                         </div>
                         <group>
-<!--                            <group>-->
-                                <field name="name"/>
-                                <field name="country_id"/>
-                                <field name="dg_cargo"/>
-<!--                            </group>-->
-<!--                            <group>-->
-<!--                                <field name="example_field"/>-->
-<!--                            </group>-->
+
+                            <field name="name"/>
+                            <field name="country_id"/>
+                            <field name="dg_cargo"/>
+
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -45,18 +47,18 @@
             </field>
         </record>
 
-<!--        <record id="port_info_search_view" model="ir.ui.view">-->
-<!--            <field name="name">port.info.search</field>-->
-<!--            <field name="model">port.info</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <search string="Port">-->
-<!--                    <group expand="1" string="Group By">-->
-<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
-<!--                                context="{'group_by':'example_field'}"/>-->
-<!--                    </group>-->
-<!--                </search>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!--        <record id="port_info_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">port.info.search</field>-->
+        <!--            <field name="model">port.info</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="Port">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+        <!--                                context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
 
         <record id="port_info_act_window" model="ir.actions.act_window">
             <field name="name">Port</field>
