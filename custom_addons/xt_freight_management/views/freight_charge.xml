@@ -15,28 +15,59 @@
                             </h1>
                         </div>
                         <group>
-                            <field name="description"/>
-                            <label for="job_type"/>
-                            <div class="o_row">
-
-                                <field name="job_type" class="o_hr_narrow_field"/>
-                                <span>/</span>
-                                <field name="module" class="o_hr_narrow_field"/>
-                            </div>
+                            <group>
 
 
-                            <field name="customer_code"/>
-                            <field name="port_of_loading"/>
-                            <field name="port_of_discharge"/>
-                            <field name="destination"/>
-                            <field name="valid_flag"/>
-                            <field name="standard_charge_flag"/>
+                                <field name="description"/>
+                                <label for="job_type" string="Job Type / Module"/>
+                                <div name="job_type_div" class="d-flex" >
+                                    <field name="job_type" />
+<!--                                    <span class="oe_inline o_form_label mx-3 oe_read_only"> in </span>-->
+                                    <!-- Bigger margin on the left because in edit mode the external link button covers the text -->
+                                    <span class="oe_inline o_form_label mr-3 ml-3 oe_edit_only"> / </span>
+                                    <field name="module"/>
+                                </div>
+
+                                <label for="est_transit_time"/>
+                                <div name="job_type_div" class="d-flex" >
+                                    <field name="est_transit_time" />
+<!--                                    <span class="oe_inline o_form_label mx-3 oe_read_only"> in </span>-->
+                                    <!-- Bigger margin on the left because in edit mode the external link button covers the text -->
+                                    <span class="oe_inline o_form_label ml-3 oe_edit_only"> days </span>
+                                </div>
+
+<!--                                <label for="job_type"/>-->
+<!--                                <div class="o_row">-->
+
+<!--                                    <field name="job_type" class="o_hr_narrow_field"/>-->
+<!--                                    <span>/</span>-->
+<!--                                    <field name="module" class="o_hr_narrow_field"/>-->
+<!--                                </div>-->
+
+                                <field name="frequency"/>
+                                <field name="customer_code"/>
+                                <field name="port_of_loading"/>
+                                <field name="port_of_discharge"/>
+                                <field name="destination"/>
+                            </group>
+                            <group>
 
 
-                            <field name="effective_date"/>
-                            <field name="expiry_date"/>
-                            <field name="frt_collect"/>
-                            <field name="note"/>
+                                <field name="valid_flag"/>
+                                <field name="standard_charge_flag"/>
+                                <label for="via_port_1" string="Via Port"/>
+                                <div name="via_port_div" class="d-flex" >
+                                    <field name="via_port_1" />
+<!--                                    <span class="oe_inline o_form_label mx-3 oe_read_only"> in </span>-->
+                                    <!-- Bigger margin on the left because in edit mode the external link button covers the text -->
+                                    <span class="oe_inline o_form_label mr-3 ml-3 oe_edit_only"> / </span>
+                                    <field name="via_port_2"/>
+                                </div>
+                                <field name="effective_date"/>
+                                <field name="expiry_date"/>
+                                <field name="frt_collect"/>
+                                <field name="note"/>
+                            </group>
                         </group>
                         <notebook>
                             <page string="Detail">
@@ -82,10 +113,10 @@
                 <tree string="Freight Charge" sample="1">
                     <field name="charge_table_no"/>
                     <field name="write_date"/>
-<!--                    <field name="module"/>-->
+                    <!--                    <field name="module"/>-->
                     <field name="create_date"/>
                     <field name="description"/>
-<!--                    <field name="job_type"/>-->
+                    <!--                    <field name="job_type"/>-->
                 </tree>
             </field>
         </record>
@@ -120,3 +151,5 @@
 
     </data>
 </odoo>
+
+
